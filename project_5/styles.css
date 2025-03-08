@@ -1,0 +1,158 @@
+/* General Page Styling */
+body {
+    height: 100vh;
+    background: url('pr5.jpeg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Container for Adding Tasks */
+#add-task-container {
+    width: 350px;
+    padding: 20px 10px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 5px black;
+    display: flex;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Input Styling */
+input {
+    flex: 5;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 5px;
+    border: 2px solid black;
+    transition: 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: red;
+    box-shadow: 0 0 5px red;
+    outline: none;
+}
+
+/* Add Task Button */
+#add-task {
+    font-size: 1.2rem;
+    padding: 5px;
+    flex: 1;
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+#add-task:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Task Styling */
+.task {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: slideIn 0.4s forwards;
+}
+
+/* Task Text */
+.task li {
+    list-style: none;
+    flex: 4;
+    padding: 5px;
+    font-size: 1.3rem;
+    margin: 10px;
+    color: black;
+}
+
+/* Buttons Inside Each Task */
+.task button {
+    flex: 1;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Check Task Button */
+.task .checkTask {
+    color: green;
+    margin-right: 5px;
+    border: 2px solid green;
+    font-size: 1.5rem;
+}
+
+.task .checkTask:hover {
+    background-color: green;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Delete Task Button */
+.task .deleteTask {
+    color: red;
+    margin-right: 5px;
+    border: 2px solid red;
+    font-size: 1.3rem;
+}
+
+.task .deleteTask:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Animation for Adding Tasks */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for Input Box */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation for Removing Tasks */
+.task.removing {
+    animation: fadeOut 0.4s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
